@@ -2,57 +2,82 @@
 
 const inquirer = require('inquirer');
 
-const { writeFile } = require('fs').promises;
+const fs = require ('fs');
 
+const newTeamMember = [];
 
-const promptUser = () => {
-    return inquirer.prompt ([
-    //Employee Name
-      {
-        type: 'input',
-        name: 'name',
-        message: "What is the Employee's name?",
-      },
-      //Employee Role
-      {
-        type: 'list',
-        name: 'role',
-        message: "What is the employee's role?",
-        choices:['Manager', 'Engineer', 'Intern'],
-     },
-  
-      //Employee ID
-      {
-          type: 'input',
-          name: 'id',
-          message: "What is the Employee's id number?",
-      },
-       //Employee Email
-       {
-        type: 'input',
-        name: 'email',
-        message: "What is the Employee's email?",
+const employeeRole = [
+  //Employee Role
+  {
+    type: 'list',
+    name: 'role',
+    message: "What is the employee's role?",
+    choices:['Manager', 'Engineer', 'Intern'],
     },
-      //Manager Office Number
-      {
-          type: 'input',
-          name: 'office',
-          message: "What is the Manager's office number?",
-      },
-      //Engineer Github
-      {
-          type: 'input',
-          name: 'github',
-          message: "What is the Engineer's github?",
-      },
-      //Intern School
-      {
-          type: 'input',
-          name: 'school',
-          message: "Where did the Intern go to school?",
-      },
-    ]);
-};
+];
+
+const managerRole = [
+  //Employee Name
+  {
+    type: 'input',
+    name: 'name',
+    message: "What is the Employee's name?",
+  },
+  //Employee ID
+  {
+    type: 'input',
+    name: 'id',
+    message: "What is the Employee's id number?",
+  },      
+  //Manager Office Number
+  {
+    type: 'input',
+    name: 'office',
+    message: "What is the Manager's office number?",
+  },
+];
+
+const engineerRole = [
+  //Employee Name
+  {
+    type: 'input',
+    name: 'name',
+    message: "What is the Employee's name?",
+  },
+  //Employee ID
+  {
+    type: 'input',
+    name: 'id',
+    message: "What is the Employee's id number?",
+  },
+  //Employee Email
+  {
+    type: 'input',
+    name: 'email',
+    message: "What is the Employee's email?",
+  },
+];
+
+const internRole = [
+  //Employee Name
+  {
+    type: 'input',
+    name: 'name',
+    message: "What is the Employee's name?",
+  },
+  //Employee ID
+  {
+    type: 'input',
+    name: 'id',
+    message: "What is the Employee's id number?",
+  }, 
+  //Intern School
+  {
+    type: 'input',
+    name: 'school',
+    message: "Where did the Intern go to school?",
+  },
+];
 
 
 //Generate HTML
