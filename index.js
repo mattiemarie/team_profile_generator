@@ -1,11 +1,18 @@
-// TODO: Include packages needed for this application
-
 const inquirer = require('inquirer');
 
 const fs = require ('fs');
 
+// Roles JS Files
+const employeeRole = require('./roles/Employee');
+const managerRole = require('./roles/Manager');
+const engineerRole = require('./roles/Engineer');
+const internRole = require('./roles/Intern');
+
+// New Team Members
 const newTeamMember = [];
 
+
+// Which Employee Role will be assigned?
 const employeeRole = [
   //Employee Role
   {
@@ -15,6 +22,7 @@ const employeeRole = [
     choices:['Manager', 'Engineer', 'Intern'],
     },
 ];
+
 
 const managerRole = [
   //Employee Name
