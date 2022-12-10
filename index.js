@@ -124,9 +124,12 @@ function employeeType() {
 //Manager Role
 function managerChosen(){
   inquirer.prompt(managerRole)
-  .then(function (answer) {
+  .then(function (input) {
     const managerRole = new managerRole (
-    answer.name
+    input.nameManager,
+    input.idManager,
+    input.emailManager,
+    input.officeManager
     );
     newTeamMember.push(managerRole);
     employeeType();
