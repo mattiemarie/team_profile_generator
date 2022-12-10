@@ -152,6 +152,19 @@ function engineerChosen(){
 };
 
 //Intern Role
+function internChosen(){
+  inquirer.prompt(internRole)
+  .then(function (input) {
+    const internRole = new internRole (
+    input.nameIntern,
+    input.idIntern,
+    input.emailIntern,
+    input.schoolIntern
+    );
+    newTeamMember.push(internRole);
+    employeeType();
+  });
+};
 
 //Generate HTML
 const generateHTML = ({name, role, id, email, office, github, school}) =>
