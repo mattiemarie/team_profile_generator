@@ -135,7 +135,21 @@ function managerChosen(){
     employeeType();
   });
 };
+
 //Engineer Role
+function engineerChosen(){
+  inquirer.prompt(engineerRole)
+  .then(function (input) {
+    const engineerRole = new engineerRole (
+    input.nameEngineer,
+    input.idEngineer,
+    input.emailEngineer,
+    input.githubEngineer
+    );
+    newTeamMember.push(engineerRole);
+    employeeType();
+  });
+};
 
 //Intern Role
 
