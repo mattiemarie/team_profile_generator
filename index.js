@@ -105,6 +105,21 @@ const internRole = [
   },
 ];
 
+//Manager Role
+function managerChosen(){
+  inquirer.prompt(managerRole)
+  .then(function (input) {
+    const managerRole = new managerRole (
+    input.nameManager,
+    input.idManager,
+    input.emailManager,
+    input.officeManager
+    );
+    newTeamMember.push(managerRole);
+    employeeType();
+  });
+};
+
 //An Employee Type is chosen
 function employeeType() {
   inquirer.prompt(employeeRole)
@@ -118,21 +133,6 @@ function employeeType() {
     } else {
       generateTeam();
     }
-  });
-};
-
-//Manager Role
-function managerChosen(){
-  inquirer.prompt(managerRole)
-  .then(function (input) {
-    const managerRole = new managerRole (
-    input.nameManager,
-    input.idManager,
-    input.emailManager,
-    input.officeManager
-    );
-    newTeamMember.push(managerRole);
-    employeeType();
   });
 };
 
@@ -166,13 +166,7 @@ function internChosen(){
   });
 };
 
-//Generate HTML
-const generateHTML = ({name, role, id, email, office, github, school}) =>
-  ``;
-
-
-
 generateTeam(
   //THE HTML GENERATOR WILL GO IN HERE
-  fs.writeFile()
+  fs.writeFile('index.html')
 )
