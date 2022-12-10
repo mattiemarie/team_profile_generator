@@ -25,81 +25,124 @@ const employeeRole = [
 
 
 const managerRole = [
-  //Employee Name
+  //Manager Name
   {
     type: 'input',
-    name: 'name',
+    name: 'nameManager',
     message: "What is the Employee's name?",
   },
-  //Employee ID
+  //Manager ID
   {
     type: 'input',
-    name: 'id',
+    name: 'idManager',
     message: "What is the Employee's id number?",
-  },      
+  }, 
+  //Manager Email
+  {
+    type: 'input',
+    name: 'emailManager',
+    message: "What is the Employee's email?",
+  },     
   //Manager Office Number
   {
     type: 'input',
-    name: 'office',
+    name: 'officeManager',
     message: "What is the Manager's office number?",
   },
 ];
 
 const engineerRole = [
-  //Employee Name
+  //Engineer Name
   {
     type: 'input',
-    name: 'name',
+    name: 'nameEngineer',
     message: "What is the Employee's name?",
   },
-  //Employee ID
+  //Engineer ID
   {
     type: 'input',
-    name: 'id',
+    name: 'idEngineer',
     message: "What is the Employee's id number?",
   },
-  //Employee Email
+  //Engineer Email
   {
     type: 'input',
-    name: 'email',
+    name: 'emailEngineer',
     message: "What is the Employee's email?",
+  },
+  //Engineer Github
+  {
+    type: 'input',
+    name: 'githubEngineer',
+    message: "What is the Employee's github?",
   },
 ];
 
 const internRole = [
-  //Employee Name
+  //Intern Name
   {
     type: 'input',
-    name: 'name',
+    name: 'nameIntern',
     message: "What is the Employee's name?",
   },
-  //Employee ID
+  //Intern ID
   {
     type: 'input',
-    name: 'id',
+    name: 'idIntern',
     message: "What is the Employee's id number?",
-  }, 
+  },
+  //Intern Email
+  {
+    type: 'input',
+    name: 'emailIntern',
+    message: "What is the Employee's email?",
+  },
   //Intern School
   {
     type: 'input',
-    name: 'school',
+    name: 'schoolIntern',
     message: "Where did the Intern go to school?",
   },
 ];
 
+//An Employee Type is chosen
+function employeeType() {
+  inquirer.prompt(employeeRole)
+  .then(function(choice) {
+    if(choice === 'Engineer') {
+      engineerChosen();
+    } else if(choice === 'Manager') {
+      managerChosen();
+    } else if (choice === 'Intern') {
+      internChosen();
+    } else {
+      generateTeam();
+    }
+  });
+};
+
+//Manager Role
+function managerChosen(){
+  inquirer.prompt(managerRole)
+  .then(function (answer) {
+    const managerRole = new managerRole (
+    answer.name
+    );
+    newTeamMember.push(managerRole);
+    employeeType();
+  });
+};
+//Engineer Role
+
+//Intern Role
 
 //Generate HTML
 const generateHTML = ({name, role, id, email, office, github, school}) =>
   ``;
 
-//Create a function to initialize app
-const init = () => {
-    promptUser()
-        //Write to README.md file
-        .then((answers) => writeFile('HTMLgenerated.html', generateHTML(answers)))
-        .then(() => console.log('Successfully wrote to HTMLgenerated.html'))
-        .catch((err) => console.error(err));        
-};
 
-//Function call to initialize app
-init();
+
+generateTeam(
+  //THE HTML GENERATOR WILL GO IN HERE
+  fs.writeFile()
+)
