@@ -172,7 +172,7 @@ function internChosen(){
 // )
 
 //README file formatting
-const generateHTML = ({role, nameManager, idManager, emailManager, officeManager, nameEngineer, idEngineer, emailEngineer, githubEngineer, nameIntern, emailIntern, schoolIntern}) =>
+const generateHTML = ({role, nameManager, idManager, emailManager, officeManager, nameEngineer, idEngineer, emailEngineer, githubEngineer, nameIntern,idIntern, emailIntern, schoolIntern}) =>
   `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -189,13 +189,13 @@ const generateHTML = ({role, nameManager, idManager, emailManager, officeManager
       </div>
       <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <h5 class="employee-title">Employee Name</h5>
-            <h5 class="employee-position">Employee Position</h5>
-            <h6 class="employee-id"><span class="id">ID:</span>Employee ID</h6>
-            <h6 class="employee-email"><span class="email">Email:</span>Employee Email</h6>
-            <h6 class="employee-github"><span class="github">Github:</span>Employee Github</h6>
-            <h6 class="employee-school"><span class="school">School:</span>Employee School</h6>
-            <h6 class="employee-office"><span class="office">Office:</span>Employee Office</h6>
+            <h5 class="employee-title"> ${nameManager,nameEngineer,nameIntern} </h5>
+            <h5 class="employee-position">Employee Position ${role} </h5>
+            <h6 class="employee-id"><span class="id">ID:</span>${idManager,idEngineer,idIntern}</h6>
+            <h6 class="employee-email"><span class="email">Email:</span>${emailManager,emailEngineer,emailIntern}</h6>
+            <h6 class="employee-github"><span class="github">Github:</span>${githubEngineer}</h6>
+            <h6 class="employee-school"><span class="school">School:</span>${schoolIntern}</h6>
+            <h6 class="employee-office"><span class="office">Office:</span>${officeManager}</h6>
           </div>
         </div>
   </body>
