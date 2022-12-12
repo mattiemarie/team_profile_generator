@@ -4,29 +4,40 @@ const createdWorkTeam = workTeam => {
     
     const generateHTML = [];
 
-    const generateManagerHTML = ({role, nameManager, idManager, emailManager, officeManager}) =>
+    const managerRole = ({role, nameManager, idManager, emailManager, officeManager}) => {
+
+        let managerRoleHTML =
         `<h5 class="employee-title"> ${nameManager} </h5>
         <h5 class="employee-position">Employee Position ${role} </h5>
         <h6 class="employee-id"><span class="id">ID:</span>${idManager}</h6>
         <h6 class="employee-email"><span class="email">Email:</span>${emailManager}</h6>
         <h6 class="employee-office"><span class="office">Office:</span>${officeManager}</h6>`;
-    html.push(generateManagerHTML);
+        html.push(managerRoleHTML);
+    };
 
-    const generateEngineerHTML = ({role, nameEngineer, idEngineer, emailEngineer, githubEngineer}) =>
+    const engineerRole = ({role, nameEngineer, idEngineer, emailEngineer, githubEngineer}) => {
+
+        let engineerRoleHTML =
         `<h5 class="employee-title"> ${nameEngineer} </h5>
         <h5 class="employee-position">Employee Position ${role} </h5>
         <h6 class="employee-id"><span class="id">ID:</span>${idEngineer}</h6>
         <h6 class="employee-email"><span class="email">Email:</span>${emailEngineer}</h6>
         <h6 class="employee-github"><span class="github">Github:</span>${githubEngineer}</h6>`;
-    html.push(generateEngineerHTML);
+        html.push(engineerRoleHTML);
+    };
 
-    const generateInternHTML = ({role, nameIntern, idIntern, emailIntern, schoolIntern}) =>
+    const internRole = ({role, nameIntern, idIntern, emailIntern, schoolIntern}) => {
+
+        let internRoleHTML =
         `<h5 class="employee-title"> ${nameIntern} </h5>
         <h5 class="employee-position">Employee Position ${role} </h5>
         <h6 class="employee-id"><span class="id">ID:</span>${idIntern}</h6>
         <h6 class="employee-email"><span class="email">Email:</span>${emailIntern}</h6>
         <h6 class="employee-school"><span class="school">School:</span>${schoolIntern}</h6>`;
-    html.push(generateInternHTML);
+        html.push(internRoleHTML);
+    };
+
+    
 };
 
 module.exports = workTeam => {
