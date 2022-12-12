@@ -37,7 +37,17 @@ const createdWorkTeam = workTeam => {
         html.push(internRoleHTML);
     };
 
-    
+    for (let i = 0; i < workTeam.length; i++) {
+        if (workTeam[i].employeeRole() === "Manager") {
+            managerRole(workTeam[i]);
+        }
+        if (workTeam[i].employeeRole() === "Engineer") {
+            engineerRole(workTeam[i]);
+        }
+        if (workTeam[i].employeeRole()=== "Intern") {
+            engineerRole(workTeam[i]);
+        }
+    }
 };
 
 module.exports = workTeam => {
