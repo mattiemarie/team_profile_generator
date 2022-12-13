@@ -122,93 +122,46 @@ const engineerRole = () => {
   });
 };
 
-const internRole = [
-  //Intern Name
+const internRole = () => {
+  return inquirer.prompt ([
+    //Intern Name
   {
     type: 'input',
-    name: 'nameIntern',
-    message: "What is the Employee's name?",
+    name: 'name',
+    message: "What is the Intern's name?",
   },
   //Intern ID
   {
     type: 'input',
-    name: 'idIntern',
-    message: "What is the Employee's id number?",
+    name: 'id',
+    message: "What is the Intern's id number?",
   },
   //Intern Email
   {
     type: 'input',
-    name: 'emailIntern',
-    message: "What is the Employee's email?",
+    name: 'email',
+    message: "What is the Intern's email?",
   },
   //Intern School
   {
     type: 'input',
-    name: 'schoolIntern',
+    name: 'school',
     message: "Where did the Intern go to school?",
-  },
-];
+  }
+  ])
 
-//Manager Role
-function managerChosen(){
-  inquirer.prompt(managerRole)
   .then(function (input) {
-    const ManagerRole = new ManagerRole (
-    input.nameManager,
-    input.idManager,
-    input.emailManager,
-    input.officeManager
+    const internRole = new InternRole (
+    input.name,
+    input.id,
+    input.email,
+    input.school
     );
-    newTeamMember.push(ManagerRole);
+    newTeamMember.push(internRole);
     employeeType();
   });
 };
 
-//An Employee Type is chosen
-function employeeType() {
-  inquirer.prompt(employeeRole)
-  .then(function(choice) {
-    if(choice === 'Engineer') {
-      engineerChosen();
-    } else if(choice === 'Manager') {
-      managerChosen();
-    } else if (choice === 'Intern') {
-      internChosen();
-    } else {
-      generateTeam();
-    }
-  });
-};
-
-//Engineer Role
-function engineerChosen(){
-  inquirer.prompt(engineerRole)
-  .then(function (input) {
-    const EngineerRole = new EngineerRole (
-    input.nameEngineer,
-    input.idEngineer,
-    input.emailEngineer,
-    input.githubEngineer
-    );
-    newTeamMember.push(EngineerRole);
-    employeeType();
-  });
-};
-
-//Intern Role
-function internChosen(){
-  inquirer.prompt(internRole)
-  .then(function (input) {
-    const InternRole = new InternRole (
-    input.nameIntern,
-    input.idIntern,
-    input.emailIntern,
-    input.schoolIntern
-    );
-    newTeamMember.push(InternRole);
-    employeeType();
-  });
-};
 
 
 // Generate Team 
