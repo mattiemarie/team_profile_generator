@@ -1,7 +1,7 @@
 const EngineerRole = require('../roles/Engineer');
 const engineerRole = EngineerRole('chris', '32370', 'coloredinink@gmail.com', 'coloredinink');
 
-it('Constructor Values for the Employee function are being tested',() => {
+it('Constructor Values for the Engineer function are being tested',() => {
     expect(engineerRole.name).toEqual('chis');
     expect(engineerRole.id).toEqual('32370');
     expect(engineerRole.email).toEqual('coloredinink@gmail.com');
@@ -17,7 +17,7 @@ it('getId() method Test',() => {
 });
 
 it('getEmail() method Test',() => {
-    expect(engineerRole.getEmail()).toEqual('coloredinink');
+    expect(engineerRole.getEmail()).toEqual('coloredinink@gmail.com');
 });
 
 it('getGithub() method Test', () => {
