@@ -6,34 +6,46 @@ const createdWorkTeam = workTeam => {
 
     const managerRole = ({role, name, id, email, office}) => {
 
-        let managerRoleHTML =
-        `<h5 class="employee-title"> ${name} </h5>
-        <h5 class="employee-position">Employee Position ${role} </h5>
-        <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
-        <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
-        <h6 class="employee-office"><span class="office">Office:</span>${office}</h6>`;
+        let managerRoleHTML = `
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="employee-title">${name}</h5>
+          <h5 class="employee-position">${role}</h5>
+          <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
+          <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
+          <h6 class="employee-office"><span class="office">Office:</span>${office}</h6>
+        </div>
+        </div>`;
         html.push(managerRoleHTML);
     };
 
     const engineerRole = ({role, name, id, email, github}) => {
 
-        let engineerRoleHTML =
-        `<h5 class="employee-title"> ${name} </h5>
-        <h5 class="employee-position">Employee Position ${role} </h5>
-        <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
-        <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
-        <h6 class="employee-github"><span class="github">Github:</span>${github}</h6>`;
+        let engineerRoleHTML =`
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="employee-title">${name}</h5>
+          <h5 class="employee-position">${role}</h5>
+          <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
+          <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
+          <h6 class="employee-github"><span class="github">Github:</span>${github}</h6>
+        </div>
+        </div>`;
         html.push(engineerRoleHTML);
     };
 
     const internRole = ({role, name, id, email, school}) => {
 
-        let internRoleHTML =
-        `<h5 class="employee-title"> ${name} </h5>
-        <h5 class="employee-position">Employee Position ${role} </h5>
-        <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
-        <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
-        <h6 class="employee-school"><span class="school">School:</span>${school}</h6>`;
+        let internRoleHTML = `
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="employee-title">${name}</h5>
+          <h5 class="employee-position">${role}</h5>
+          <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
+          <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
+          <h6 class="employee-school"><span class="school">School:</span> ${school}</h6>
+        </div>
+        </div>`;
         html.push(internRoleHTML);
     };
 
@@ -64,15 +76,13 @@ module.exports = workTeam => {
         <link rel="stylesheet" href="./style.css" />
         <title>Team Profile Generator Mock HTML</title>
     </head>
+    <header>
+      <div class="heading-container" id="heading">
+        My Team
+      </div>
+    </header>
     <body>
-        <div class="heading-container" id="heading">
-            My Team
-        </div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              ${createdWorkTeam(workTeam)}
-            </div>
-          </div>
+        ${createdWorkTeam(workTeam)}
     </body>
     </html>`;
 };
