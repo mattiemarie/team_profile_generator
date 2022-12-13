@@ -1,7 +1,7 @@
-const EmployeeRole = requirer('./Employee');
+const EmployeeRole = require('./Employee');
 
 class EngineerRole extends EmployeeRole {
-    constructor(name, id, email) {
+    constructor(name, id, email, github) {
 
         super(name, id, email)
         this.github = github;

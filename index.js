@@ -3,53 +3,68 @@ const inquirer = require('inquirer');
 const fs = require ('fs');
 
 // Roles JS Files
-const employeeRole = require('./roles/Employee');
-const managerRole = require('./roles/Manager');
-const engineerRole = require('./roles/Engineer');
-const internRole = require('./roles/Intern');
+const ManagerRole = require('./roles/Manager');
+const EngineerRole = require('./roles/Engineer');
+const InternRole = require('./roles/Intern');
+
+const generateHTML = require('./generated-html');
 
 // New Team Members
 const newTeamMember = [];
 
 
-// Which Employee Role will be assigned?
-const employeeRole = [
-  //Employee Role
+// Begin Team by Inputing Manager Information
+const managerRole = () => {
+  return inquirer.prompt ([
+    //Manager Name
+  {
+    type: 'input',
+    name: 'name',
+    message: "What is the Employee's name?",
+  },
+  //Manager ID
+  {
+    type: 'input',
+    name: 'id',
+    message: "What is the Employee's id number?",
+  }, 
+  //Manager Email
+  {
+    type: 'input',
+    name: 'email',
+    message: "What is the Employee's email?",
+  },     
+  //Manager Office Number
+  {
+    type: 'input',
+    name: 'office',
+    message: "What is the Manager's office number?",
+  },
+  ])
+  .then(function (input) {
+    const managerRole = new ManagerRole (
+    input.nameManager,
+    input.idManager,
+    input.emailManager,
+    input.officeManager
+    );
+    newTeamMember.push(managerRole);
+    employeeType();
+  });
+};
+
+// Which Employee Role will be assigned next?
+const employeeType = () => {
+  return inquirer.prompt ([
+    // Manager Chooses Employee Role
   {
     type: 'list',
     name: 'role',
     message: "What is the employee's role?",
     choices:['Manager', 'Engineer', 'Intern', 'Build Team'],
     },
-];
-
-
-const managerRole = [
-  //Manager Name
-  {
-    type: 'input',
-    name: 'nameManager',
-    message: "What is the Employee's name?",
-  },
-  //Manager ID
-  {
-    type: 'input',
-    name: 'idManager',
-    message: "What is the Employee's id number?",
-  }, 
-  //Manager Email
-  {
-    type: 'input',
-    name: 'emailManager',
-    message: "What is the Employee's email?",
-  },     
-  //Manager Office Number
-  {
-    type: 'input',
-    name: 'officeManager',
-    message: "What is the Manager's office number?",
-  },
-];
+  ])
+}
 
 const engineerRole = [
   //Engineer Name
@@ -109,13 +124,13 @@ const internRole = [
 function managerChosen(){
   inquirer.prompt(managerRole)
   .then(function (input) {
-    const managerRole = new managerRole (
+    const ManagerRole = new ManagerRole (
     input.nameManager,
     input.idManager,
     input.emailManager,
     input.officeManager
     );
-    newTeamMember.push(managerRole);
+    newTeamMember.push(ManagerRole);
     employeeType();
   });
 };
@@ -140,13 +155,13 @@ function employeeType() {
 function engineerChosen(){
   inquirer.prompt(engineerRole)
   .then(function (input) {
-    const engineerRole = new engineerRole (
+    const EngineerRole = new EngineerRole (
     input.nameEngineer,
     input.idEngineer,
     input.emailEngineer,
     input.githubEngineer
     );
-    newTeamMember.push(engineerRole);
+    newTeamMember.push(EngineerRole);
     employeeType();
   });
 };
@@ -155,13 +170,13 @@ function engineerChosen(){
 function internChosen(){
   inquirer.prompt(internRole)
   .then(function (input) {
-    const internRole = new internRole (
+    const InternRole = new InternRole (
     input.nameIntern,
     input.idIntern,
     input.emailIntern,
     input.schoolIntern
     );
-    newTeamMember.push(internRole);
+    newTeamMember.push(InternRole);
     employeeType();
   });
 };
@@ -169,7 +184,7 @@ function internChosen(){
 
 // Generate Team 
 const generateTeam = () => {
-  fs.writeFileSync(outputPath, generateTeam(newTeamMember), "utf-8")
+  fs.writeFileSync('generatedTeam.html', generateTeam(newTeamMember), "utf-8")
 };
 
 managerChosen();
