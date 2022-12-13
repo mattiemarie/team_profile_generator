@@ -60,5 +60,5 @@ The following link shows a demo of Team Profile Generator's appearance and funct
 
 
 ## Description
-
+The goal of Challenge 10 was to create a custom team based on the managers input. The manager will select the role of each employee and enter the corresponding data for each team member. Then a custom team html page will be generated based on the team created.
 
