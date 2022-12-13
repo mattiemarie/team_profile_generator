@@ -16,23 +16,24 @@ const newTeamMember = [];
 // Begin Team by Inputing Manager Information
 const managerRole = () => {
   return inquirer.prompt ([
-    //Manager Name
+
+  //Manager Name
   {
     type: 'input',
     name: 'name',
-    message: "What is the Employee's name?",
+    message: "What is the Manager's name?",
   },
   //Manager ID
   {
     type: 'input',
     name: 'id',
-    message: "What is the Employee's id number?",
+    message: "What is the Manager's id number?",
   }, 
   //Manager Email
   {
     type: 'input',
     name: 'email',
-    message: "What is the Employee's email?",
+    message: "What is the Manager's email?",
   },     
   //Manager Office Number
   {
@@ -43,55 +44,83 @@ const managerRole = () => {
   ])
   .then(function (input) {
     const managerRole = new ManagerRole (
-    input.nameManager,
-    input.idManager,
-    input.emailManager,
-    input.officeManager
+    input.name,
+    input.id,
+    input.email,
+    input.office
     );
     newTeamMember.push(managerRole);
     employeeType();
+  
   });
 };
 
 // Which Employee Role will be assigned next?
 const employeeType = () => {
   return inquirer.prompt ([
-    // Manager Chooses Employee Role
+
+  // Manager Chooses Employee Role
   {
     type: 'list',
     name: 'role',
     message: "What is the employee's role?",
-    choices:['Manager', 'Engineer', 'Intern', 'Build Team'],
-    },
+    choices:['Engineer', 'Intern', 'Team Built'],
+    }
   ])
-}
 
-const engineerRole = [
-  //Engineer Name
+  // Manager's Choice will prompt certain employee questions
+  .then(managerChoice => {
+      if (managerChoice.list === 'Manager') {
+        return engineerRole();
+      } if (managerChoice.list === 'Intern') {
+        return internRole();
+      } else  {
+        return teamBuilt();
+      }
+  });
+};
+
+// Manager has chosen an Engineer
+const engineerRole = () => {
+  return inquirer.prompt ([
+  
+    //Engineer Name
   {
     type: 'input',
-    name: 'nameEngineer',
-    message: "What is the Employee's name?",
+    name: 'name',
+    message: "What is the Engineer's name?",
   },
   //Engineer ID
   {
     type: 'input',
-    name: 'idEngineer',
-    message: "What is the Employee's id number?",
+    name: 'id',
+    message: "What is the Engineer's id number?",
   },
   //Engineer Email
   {
     type: 'input',
-    name: 'emailEngineer',
-    message: "What is the Employee's email?",
+    name: 'email',
+    message: "What is the Engineer's email?",
   },
   //Engineer Github
   {
     type: 'input',
-    name: 'githubEngineer',
-    message: "What is the Employee's github?",
-  },
-];
+    name: 'github',
+    message: "What is the Engineer's github?",
+  }
+  ])
+
+  .then(function (input) {
+    const engineerRole = new EngineerRole (
+    input.name,
+    input.id,
+    input.email,
+    input.github
+    );
+    newTeamMember.push(engineerRole);
+    employeeType();
+  });
+};
 
 const internRole = [
   //Intern Name
