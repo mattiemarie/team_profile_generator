@@ -166,7 +166,14 @@ const internRole = () => {
 
 // Generate Team 
 const generateTeam = () => {
-  fs.writeFileSync('team.html', generateTeamHTML(newTeamMember), 'utf-8');
+  fs.writeFile('team.html', generateTeamHTML(newTeamMember), (err) => {
+    if(err)
+    console.log(err);
+    else {
+      console.log("File written successfully")
+      console.log(fs.readFileSync('team.html', 'utf-8'))
+    }
+  });
 };
 
 managerRole();
