@@ -21,5 +21,5 @@ it('getEmail() method Test',() => {
 });
 
 it('getSchool() method Test', () => {
-    expect(internRole.getSchool()).toEqual('annadale');
+    expect(internRole.internSchool()).toEqual('annadale');
 });

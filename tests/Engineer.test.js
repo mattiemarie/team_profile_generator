@@ -21,5 +21,5 @@ it('getEmail() method Test',() => {
 });
 
 it('getGithub() method Test', () => {
-    expect(engineerRole.getGithub()).toEqual('coloredinink');
+    expect(engineerRole.engineerGithub()).toEqual('coloredinink');
 });
