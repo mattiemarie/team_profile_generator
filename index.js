@@ -7,7 +7,7 @@ const ManagerRole = require('./roles/Manager');
 const EngineerRole = require('./roles/Engineer');
 const InternRole = require('./roles/Intern');
 
-const generateHTML = require('./generated-html');
+const generateTeamHTML = require('./generated-html');
 
 // New Team Members
 const newTeamMember = [];
@@ -70,12 +70,12 @@ const employeeType = () => {
 
   // Manager's Choice will prompt certain employee questions
   .then(managerChoice => {
-      if (managerChoice.list === 'Manager') {
+      if (managerChoice.role === 'Engineer') {
         return engineerRole();
-      } if (managerChoice.list === 'Intern') {
+      } else if (managerChoice.role === 'Intern') {
         return internRole();
-      } else  {
-        return teamBuilt();
+      } else if (managerChoice.role === 'Team Built') {
+        return generateTeam();
       }
   });
 };
@@ -166,7 +166,7 @@ const internRole = () => {
 
 // Generate Team 
 const generateTeam = () => {
-  fs.writeFileSync('generatedTeam.html', generateTeam(newTeamMember), "utf-8")
+  fs.writeFileSync('team.html', generateTeamHTML(newTeamMember), 'utf-8');
 };
 
-managerChosen();
+managerRole();
