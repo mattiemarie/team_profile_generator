@@ -1,24 +1,25 @@
-const EmployeeRole = require('../roles/Employee');
+const EngineerRole = require('../roles/Engineer');
+const engineerRole = EngineerRole('chris', '32370', 'coloredinink@gmail.com', 'coloredinink');
 
 it('Constructor Values for the Employee function are being tested',() => {
-    expect(employeeRole.name).toEqual('brian');
-    expect(employeeRole.id).toEqual('32369');
-    expect(employeeRole.email).toEqual('mrgreenside@gmail.com');
-    expect(employeeRole.role).toEqual('manager')
+    expect(engineerRole.name).toEqual('chis');
+    expect(engineerRole.id).toEqual('32370');
+    expect(engineerRole.email).toEqual('coloredinink@gmail.com');
+    expect(engineerRole.github).toEqual('coloredinink')
 });
 
 it('getName() method Test',() => {
-    expect(employeeRole.getName()).toEqual('brian');
+    expect(engineerRole.getName()).toEqual('chris');
 });
 
 it('getId() method Test',() => {
-    expect(employeeRole.getId()).toEqual('32369');
+    expect(engineerRole.getId()).toEqual('32370');
 });
 
 it('getEmail() method Test',() => {
-    expect(employeeRole.getEmail()).toEqual('mrgreenside@gmail.com');
+    expect(engineerRole.getEmail()).toEqual('coloredinink');
 });
 
-it('getRole() method Test', () => {
-    expect(employeeRole.getRole()).toEqual('manager')
-})
+it('getGithub() method Test', () => {
+    expect(engineerRole.getGithub()).toEqual('coloredinink');
+});
