@@ -5,25 +5,16 @@ class EngineerRole extends EmployeeRole {
 
         super(name, id, email)
         this.github = github;
-    }
+    };
 
-engineerName() {
-    return this.name
+    engineerGithub() {
+        return this.github
+    };
+
+    getRole() {
+        return "EngineerRole"
+    };
 }
 
-engineerId() {
-    return this.id
-}
-
-engineerEmail() {
-    return this.email
-}
-
-};
-
-getRole();
 
 module.exports = EngineerRole;
-
-
-/// EXTEND OFF OF EMPLOYEE
