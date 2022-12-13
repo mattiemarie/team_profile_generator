@@ -1,11 +1,27 @@
 class EmployeeRole {
-    constructor(role){
-        this.role = role
+    constructor(name, id, email) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
     }
 
-employeeRole() {
-    return this.role
-}
+    getName() {
+        return this.name
+    }
+
+    getId() {
+        return this.id
+    }
+
+    getEmail() {
+        return this.email
+    }
+
+
+
+    getemployeeRole() {
+    return "EmployeeRole"
+    };
 };
 
 getRole();

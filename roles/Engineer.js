@@ -1,8 +1,10 @@
-class EngineerRole {
-    constructor(name, id, email){
-        this.name = name;
-        this.id = id;
-        this.email = email;
+const EmployeeRole = requirer('./Employee');
+
+class EngineerRole extends EmployeeRole {
+    constructor(name, id, email) {
+
+        super(name, id, email)
+        this.github = github;
     }
 
 engineerName() {
@@ -22,3 +24,6 @@ engineerEmail() {
 getRole();
 
 module.exports = EngineerRole;
+
+
+/// EXTEND OFF OF EMPLOYEE

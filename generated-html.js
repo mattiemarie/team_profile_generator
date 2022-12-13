@@ -48,10 +48,13 @@ const createdWorkTeam = workTeam => {
             engineerRole(workTeam[i]);
         }
     }
+
+    return html.join ('');
 };
 
 module.exports = workTeam => {
-    return 
+    
+    return
     `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -73,4 +76,4 @@ module.exports = workTeam => {
           </div>
     </body>
     </html>`;
-}
+};
