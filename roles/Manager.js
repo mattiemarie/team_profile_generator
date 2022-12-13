@@ -1,24 +1,20 @@
-class ManagerRole {
-    constructor(name, id, office){
-        this.name = name;
-        this.id = id;
+const EmployeeRole = requirer('./Employee');
+
+class ManagerRole extends EmployeeRole {
+    constructor(name, id, email) {
+
+        super(name, id, email)
         this.office = office;
-    }
+    };
 
-managerName() {
-    return this.name
+    managerOffice() {
+        return this.office
+    };
+
+    getRole() {
+        return "ManagerRole"
+    };
 }
 
-managerId() {
-    return this.id
-}
-
-managerOffice() {
-    return this.office
-}
-
-};
-
-getRole();
 
 module.exports = ManagerRole;
