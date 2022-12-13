@@ -1,20 +1,20 @@
 const EmployeeRole = require('../roles/Employee');
 const employeeRole = EmployeeRole('brian', '32369', 'mrgreenside@gmail.com');
 
-test ('Constructor Values for the Employee function are being tested',() => {
-    expect(employeeRole.name).toequal('brian');
-    expect(employeeRole.id).toequal('32369');
-    expect(employeeRole.email).toequal('mrgreenside@gmail.com');
+it('Constructor Values for the Employee function are being tested',() => {
+    expect(employeeRole.name).toEqual('brian');
+    expect(employeeRole.id).toEqual('32369');
+    expect(employeeRole.email).toEqual('mrgreenside@gmail.com');
 });
 
-test ('getName() method Test',() => {
-    expect(employeeRole.getName()).toequal('brian');
+it('getName() method Test',() => {
+    expect(employeeRole.getName()).toEqual('brian');
 });
 
-test ('getId() method Test',() => {
-    expect(employeeRole.getId()).toequal('32369');
+it('getId() method Test',() => {
+    expect(employeeRole.getId()).toEqual('32369');
 });
 
-test ('getEmail() method Test',() => {
-    expect(employeeRole.getEmail()).toequal('mrgreenside@gmail.com');
+it('getEmail() method Test',() => {
+    expect(employeeRole.getEmail()).toEqual('mrgreenside@gmail.com');
 });
