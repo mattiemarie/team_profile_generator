@@ -45,18 +45,19 @@ const managerRole = () => {
   .then(function (input) {
     const managerRole = new ManagerRole (
     input.name,
+    input.role,
     input.id,
     input.email,
     input.office
     );
     newTeamMember.push(managerRole);
-    employeeType();
+    employeeRole();
   
   });
 };
 
 // Which Employee Role will be assigned next?
-const employeeType = () => {
+const employeeRole = () => {
   return inquirer.prompt ([
 
   // Manager Chooses Employee Role
@@ -113,12 +114,13 @@ const engineerRole = () => {
   .then(function (input) {
     const engineerRole = new EngineerRole (
     input.name,
+    input.role,
     input.id,
     input.email,
     input.github
     );
     newTeamMember.push(engineerRole);
-    employeeType();
+    employeeRole();
   });
 };
 
@@ -153,12 +155,13 @@ const internRole = () => {
   .then(function (input) {
     const internRole = new InternRole (
     input.name,
+    input.role,
     input.id,
     input.email,
     input.school
     );
     newTeamMember.push(internRole);
-    employeeType();
+    employeeRole();
   });
 };
 
