@@ -50,13 +50,13 @@ const createdWorkTeam = workTeam => {
     };
 
     for (let i = 0; i < workTeam.length; i++) {
-        if (workTeam[i].getRole() === "Manager") {
+        if (workTeam[i].getRole() === "ManagerRole") {
             managerRole(workTeam[i]);
         }
-        if (workTeam[i].getRole() === "Engineer") {
+        if (workTeam[i].getRole() === "EngineerRole") {
             engineerRole(workTeam[i]);
         }
-        if (workTeam[i].getRole()=== "Intern") {
+        if (workTeam[i].getRole()=== "InternRole") {
             internRole(workTeam[i]);
         }
     }
