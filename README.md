@@ -57,7 +57,7 @@ The following link shows a demo of Team Profile Generator's appearance and funct
 
 
 
-https://drive.google.com/file/d/1rRky-pUW4nIIMoaHZ8wNRan8wjk773Us/view
+https://drive.google.com/file/d/1e_k0LGY0daUwUw_CTvCo2E3H_1UqSZ0z/view
 
 
 
