@@ -7,7 +7,7 @@
 .heading-container {
     background-color: rgb(238, 29, 89);
     color: white;
-    font-size: 60px;
+    font-size: 40px;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +31,7 @@
 }
 
 .employee-title {
-    font-size: 30px;
+    font-size: 24px;
     background-color: rgb(66, 164, 215);
     display: flex;
     align-items: center;
@@ -42,7 +42,7 @@
 }
 
 .employee-position {
-    font-size: 30px;
+    font-size: 24px;
     background-color: rgb(66, 164, 215);
     display: flex;
     align-items: center;
@@ -52,13 +52,13 @@
 }
 
 .employee-id {
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     background-color: white;
     display: flex;
     align-content: center;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     height: 30px;
     width: 300px;
     padding:10px;
@@ -69,13 +69,13 @@
     color:rgb(66, 164, 215);
 }
 .employee-email{
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     background-color: white;
     display: flex;
     align-content: center;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     height: 30px;
     width: 300px;
     padding:10px;
@@ -84,17 +84,19 @@
 
 .email {
     color:rgb(66, 164, 215);
+    display:flex;
+    justify-content: left;
 }
 
 
 .employee-github{
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     background-color: white;
     display: flex;
     align-content: center;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     height: 30px;
     width: 300px;
     padding:10px;
@@ -102,16 +104,18 @@
 }
 .github {
     color:rgb(66, 164, 215);
+    display: flex;
+    justify-content: left;
 }
 
 .employee-school{
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     background-color: white;
     display: flex;
     align-content: center;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     height: 30px;
     width: 300px;
     padding:10px;
@@ -123,13 +127,13 @@
 }
 
 .employee-office {
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     background-color: white;
     display: flex;
     align-content: center;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     height: 30px;
     width: 300px;
     padding:10px;

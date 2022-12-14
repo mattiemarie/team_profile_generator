@@ -45,7 +45,6 @@ const managerRole = () => {
   .then(function (input) {
     const managerRole = new ManagerRole (
     input.name,
-    input.role,
     input.id,
     input.email,
     input.office
@@ -114,7 +113,6 @@ const engineerRole = () => {
   .then(function (input) {
     const engineerRole = new EngineerRole (
     input.name,
-    input.role,
     input.id,
     input.email,
     input.github
@@ -155,7 +153,6 @@ const internRole = () => {
   .then(function (input) {
     const internRole = new InternRole (
     input.name,
-    input.role,
     input.id,
     input.email,
     input.school

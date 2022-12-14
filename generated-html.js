@@ -12,7 +12,7 @@ const createdWorkTeam = workTeam => {
           <h5 class="employee-title">${name}</h5>
           <h5 class="employee-position">${role}</h5>
           <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
-          <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
+          <h6 class="employee-email"><span class="email">Email:</span><a class="employee-email" href='mailto:${email}'>${email}</a></h6>
           <h6 class="employee-office"><span class="office">Office:</span>${office}</h6>
         </div>
         </div>`;
@@ -27,8 +27,8 @@ const createdWorkTeam = workTeam => {
           <h5 class="employee-title">${name}</h5>
           <h5 class="employee-position">${role}</h5>
           <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
-          <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
-          <h6 class="employee-github"><span class="github">Github:</span>${github}</h6>
+          <h6 class="employee-email"><span class="email">Email:</span><a class="employee-email" href='mailto:${email}'>${email}</a></h6>
+          <h6 class="employee-github"><span class="github">Github</span><a class="employee-github" href='https://${github}'>${github}</a></h6>
         </div>
         </div>`;
         html.push(engineerRoleHTML);
@@ -42,7 +42,7 @@ const createdWorkTeam = workTeam => {
           <h5 class="employee-title">${name}</h5>
           <h5 class="employee-position">${role}</h5>
           <h6 class="employee-id"><span class="id">ID:</span>${id}</h6>
-          <h6 class="employee-email"><span class="email">Email:</span>${email}</h6>
+          <h6 class="employee-email"><span class="email">Email:</span><a class="employee-email" href='mailto:${email}'>${email}</a></h6>
           <h6 class="employee-school"><span class="school">School:</span> ${school}</h6>
         </div>
         </div>`;
